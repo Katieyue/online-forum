@@ -1,21 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #95cafc;
+  font-family: Outfit, sans-serif;
+  padding: 40px;
+}
+
+header {
+  margin-bottom: 40px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+form {
+  background-color: #cbe6ff;
+  margin-bottom: 40px;
+  padding: 16px 40px;
+  text-align: center;
+}
+
 h1 {
   font-size: 42px;
   text-transform: uppercase;
   text-align: center;
   font-family: "Changa One", sans-serif;
-  color: #894ed1;
 }
 
 .fact {
   font-size: 20px;
   line-height: 1.4;
-  font-family: Outfit, sans-serif;
+  background-color: #cbe6ff;
+  margin-bottom: 40px;
+  padding: 16px 24px;
+  /* letter-spacing: -1px; */
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
 }
 
 .tag {
   text-transform: uppercase;
   font-size: 14px;
   font-family: "Changa One", sans-serif;
+  padding: 1px 10px 0 10px;
+}
+
+.reaction-buttons {
+  margin-left: auto;
 }
 
 ul {
