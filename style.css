@@ -6,7 +6,7 @@
 
 /* MAIN LAYOUT */
 body {
-  background-color: #95cafc;
+  background-color: #f5f2e8;
   font-family: Outfit, sans-serif;
   padding: 48px 64px;
 
@@ -30,6 +30,7 @@ form {
   margin-bottom: 40px;
   padding: 16px 40px;
   text-align: center;
+  border-radius: 20px;
 }
 
 main {
@@ -63,11 +64,11 @@ h1 {
   background-color: #cbe6ff;
   margin-bottom: 40px;
   padding: 16px 24px;
+  border-radius: 20px;
   /* letter-spacing: -1px; */
 
   display: flex;
   align-items: center;
-
   gap: 24px;
 }
 
@@ -81,6 +82,26 @@ h1 {
 
 .reaction-buttons {
   margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.reaction-buttons button {
+  border: none;
+  background-color: aquamarine;
+  background-image: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reaction-buttons button:hover {
+  background-color: aqua;
 }
 
 ul {
