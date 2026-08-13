@@ -25,46 +25,16 @@ header {
   justify-content: space-between;
 }
 
-form {
-  background-color: #cbe6ff;
-  margin-bottom: 40px;
-  padding: 16px 40px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-form input,
-form select {
-  width: 220px;
-  background-color: rgb(111, 73, 73);
-  border: none;
-  border-radius: 100px;
-  padding: 16px;
-  color: inherit;
-  font-family: inherit;
-}
-
-form span {
-  font-weight: 600;
-  font-size: 18px;
-  margin-right: 18px;
-}
-
-form input::placeholder {
-  /* pseudoelement */
-  color: white;
-}
-
-form input:first-child {
-  flex-grow: 1;
-}
-
 main {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 48px;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ELEMENTS */
@@ -98,6 +68,14 @@ h1 {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
 }
 
 .tag {
@@ -192,4 +170,56 @@ button:hover {
   background-image: none;
   margin-bottom: 13px;
   padding: 5px;
+}
+
+form {
+  background-color: #cbe6ff;
+  margin-bottom: 40px;
+  padding: 16px 40px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+form input,
+form select {
+  width: 220px;
+  background-color: rgb(111, 73, 73);
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  color: inherit;
+  font-family: inherit;
+}
+
+form span {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 18px;
+}
+
+form input::placeholder {
+  /* pseudoelement */
+  color: white;
+}
+
+form input:first-child {
+  flex-grow: 1;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+
+    form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    form input,
+    form select {
+      width: auto;
+    }
+  }
 }
