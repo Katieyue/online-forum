@@ -76,6 +76,7 @@ h1 {
   font-size: 14px;
   font-family: "Changa One", sans-serif;
   padding: 1px 10px 0 10px;
+  border-radius: 100px;
 }
 
 .reaction-buttons {
@@ -101,4 +102,45 @@ ul {
 .source:active {
   /* pseudoclass */
   color: blue;
+}
+
+button {
+  border: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 17px;
+  background-image: linear-gradient(
+    135deg,
+    rgb(237, 183, 255),
+    rgb(249, 182, 228),
+    rgb(213, 255, 213),
+    rgb(255, 210, 126),
+    rgb(180, 35, 180)
+  );
+  color: inherit; /* force inherit from body */
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(110%) rotate(-2deg);
+}
+
+.large-btn {
+  padding: 20px 32px 17px;
+}
+
+.btn-all {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+  margin-bottom: 13px;
+  padding: 5px;
 }
