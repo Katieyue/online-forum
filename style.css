@@ -6,7 +6,7 @@
 
 /* MAIN LAYOUT */
 body {
-  background-color: #f5f2e8;
+  background-color: #f4e5df;
   font-family: Outfit, sans-serif;
   padding: 48px 64px;
 
@@ -51,18 +51,19 @@ main {
 
 h1 {
   font-size: 42px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: center;
-  font-family: "Changa One", sans-serif;
+  font-family: "Righteous";
 }
 
 .fact {
   font-size: 20px;
   line-height: 1.4;
-  background-color: #cbe6ff;
+  background-color: #fdfbf7;
   margin-bottom: 40px;
   padding: 16px 24px;
   border-radius: 20px;
+  border: 2px solid #493225;
   /* letter-spacing: -1px; */
 
   display: flex;
@@ -95,8 +96,9 @@ h1 {
 
 .reaction-buttons button {
   border: none;
-  background-color: aquamarine;
+  background-color: rgb(243, 223, 206);
   background-image: none;
+  border: 1px solid #493225;
   font-size: 18px;
   padding: 6px 12px;
   color: inherit;
@@ -107,7 +109,7 @@ h1 {
 }
 
 .reaction-buttons button:hover {
-  background-color: aqua;
+  background-color: #ffd890;
 }
 
 ul {
@@ -128,23 +130,24 @@ ul {
 .source:hover,
 .source:active {
   /* pseudoclass */
-  color: blue;
+  color: #23475e;
 }
 
 button {
-  border: none;
+  border: 2px solid #493225;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1;
   text-transform: uppercase;
   font-size: 17px;
-  background-image: linear-gradient(
+  background-color: #8dc3e8;
+  /* background-image: linear-gradient(
     135deg,
     rgb(237, 183, 255),
     rgb(249, 182, 228),
     rgb(213, 255, 213),
     rgb(255, 210, 126),
     rgb(180, 35, 180)
-  );
+  ); */
   color: inherit; /* force inherit from body */
   border-radius: 100px;
   cursor: pointer;
@@ -173,7 +176,7 @@ button:hover {
 }
 
 form {
-  background-color: #cbe6ff;
+  background-color: #fdfbf7;
   margin-bottom: 40px;
   padding: 16px 40px;
   border-radius: 16px;
