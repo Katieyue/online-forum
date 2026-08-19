@@ -1,11 +1,11 @@
 const CATEGORIES = [
-  { name: "technology", color: "#5e84e2" },
-  { name: "science", color: "#89d385" },
-  { name: "finance", color: "#ef4444" },
-  { name: "society", color: "#fecc64" },
-  { name: "entertainment", color: "#f38081" },
-  { name: "health", color: "#14b8a6" },
-  { name: "history", color: "#f88a3c" },
+  { name: "technology", color: "#B5DCFE" },
+  { name: "science", color: "#BDE3D4" },
+  { name: "finance", color: "#f28c38" },
+  { name: "society", color: "#FCE27B" },
+  { name: "entertainment", color: "#FFB3BE" },
+  { name: "health", color: "#8af2e6" },
+  { name: "history", color: "#ffc79f" },
   { name: "news", color: "#a1a1f7" },
 ];
 
@@ -44,5 +44,3 @@ const initialFacts = [
 ];
 
 // LINK TO APP SAMPLE DATA: https://docs.google.com/spreadsheets/d/1eeldcA_OwP4DHYEvjG0kDe0cRys-cDPhc_E9P9G1e3I/edit#gid=0
-
-// 👍 🤯 ⛔️

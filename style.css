@@ -16,6 +16,10 @@ body {
 
 /* LAYOUT */
 
+.hidden {
+  display: none !important;
+}
+
 header {
   margin-bottom: 40px;
   padding: 10px;
@@ -139,7 +143,7 @@ button {
   line-height: 1;
   text-transform: uppercase;
   font-size: 17px;
-  background-color: #8dc3e8;
+  background-color: #ff9860;
   /* background-image: linear-gradient(
     135deg,
     rgb(237, 183, 255),
@@ -166,11 +170,13 @@ button:hover {
   width: 100%;
   margin-bottom: 20px;
   padding: 5px;
+  background-color: azure;
 }
 
 .btn-category {
   width: 100%;
   background-image: none;
+  background-color: #58bfff;
   margin-bottom: 13px;
   padding: 5px;
 }
