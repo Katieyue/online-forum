@@ -1,38 +1,38 @@
 // console.log("Hello World!");
 
-const initialFacts = [
-  {
-    id: 1,
-    text: "React is being developed by Meta (formerly facebook)",
-    source: "https://opensource.fb.com/",
-    category: "technology",
-    votesInteresting: 24,
-    votesMindblowing: 9,
-    votesFalse: 4,
-    createdIn: 2021,
-  },
-  {
-    id: 2,
-    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
-    source:
-      "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "society",
-    votesInteresting: 11,
-    votesMindblowing: 2,
-    votesFalse: 0,
-    createdIn: 2019,
-  },
-  {
-    id: 3,
-    text: "Lisbon is the capital of Portugal",
-    source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "society",
-    votesInteresting: 8,
-    votesMindblowing: 3,
-    votesFalse: 1,
-    createdIn: 2015,
-  },
-];
+// const initialFacts = [
+//   {
+//     id: 1,
+//     text: "React is being developed by Meta (formerly facebook)",
+//     source: "https://opensource.fb.com/",
+//     category: "technology",
+//     votesInteresting: 24,
+//     votesMindblowing: 9,
+//     votesFalse: 4,
+//     createdIn: 2021,
+//   },
+//   {
+//     id: 2,
+//     text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
+//     source:
+//       "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
+//     category: "society",
+//     votesInteresting: 11,
+//     votesMindblowing: 2,
+//     votesFalse: 0,
+//     createdIn: 2019,
+//   },
+//   {
+//     id: 3,
+//     text: "Lisbon is the capital of Portugal",
+//     source: "https://en.wikipedia.org/wiki/Lisbon",
+//     category: "society",
+//     votesInteresting: 8,
+//     votesMindblowing: 3,
+//     votesFalse: 1,
+//     createdIn: 2015,
+//   },
+// ];
 
 // Selecting DOM elements
 const postBtn = document.querySelector(".btn-post");
@@ -60,11 +60,11 @@ async function loadFacts() {
     },
   );
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
+  // const filteredData = data.filter((fact) => fact.category === "history");
+  // createFactsList(filteredData);
   createFactsList(data);
 }
-
-// createFactsList(initialFacts);
 
 function createFactsList(dataArray) {
   const htmlArr = dataArray.map(
@@ -77,12 +77,12 @@ function createFactsList(dataArray) {
           target="_blank"
         >(Source)</a>
     </p>
-    <span class="tag" style="background-color: #b5dcfe">
+    <span class="tag" style="background-color: ${CATEGORIES.find((cat) => cat.name === fact.category).color}">
     ${fact.category}</span>
     
     </li>`,
   );
-  console.log(htmlArr);
+  // console.log(htmlArr);
   const joinedHTML = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", joinedHTML);
 }
@@ -101,6 +101,9 @@ postBtn.addEventListener("click", function () {
   }
 });
 
+console.log([7, 64, 6, -23, 11].filter((el) => el > 10)); // filter -- returns new array of all elements that satisfy
+console.log([7, 64, 6, -23, 11].find((el) => el > 10)); // find -- return first element that satisfies
+
 const CATEGORIES = [
   { name: "technology", color: "#B5DCFE" },
   { name: "science", color: "#BDE3D4" },
@@ -111,6 +114,8 @@ const CATEGORIES = [
   { name: "history", color: "#ffc79f" },
   { name: "news", color: "#a1a1f7" },
 ];
+
+console.log(CATEGORIES.find((cat) => cat.name === "history").color);
 
 const allCategories = CATEGORIES.map((el) => el.name);
 console.log(allCategories.join(" ")); // join array into one string
