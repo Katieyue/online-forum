@@ -1,16 +1,5 @@
 import "./style.css";
 
-const CATEGORIES = [
-  { name: "technology", color: "#B5DCFE" },
-  { name: "science", color: "#BDE3D4" },
-  { name: "finance", color: "#f28c38" },
-  { name: "society", color: "#FCE27B" },
-  { name: "entertainment", color: "#FFB3BE" },
-  { name: "health", color: "#8af2e6" },
-  { name: "history", color: "#ffc79f" },
-  { name: "news", color: "#a1a1f7" },
-];
-
 const initialFacts = [
   {
     id: 1,
@@ -76,8 +65,37 @@ function NewPostForm() {
   return <form>Fact form</form>;
 }
 
+const CATEGORIES = [
+  { name: "technology", color: "#B5DCFE" },
+  { name: "science", color: "#BDE3D4" },
+  { name: "finance", color: "#f28c38" },
+  { name: "society", color: "#FCE27B" },
+  { name: "entertainment", color: "#FFB3BE" },
+  { name: "health", color: "#8af2e6" },
+  { name: "history", color: "#ffc79f" },
+  { name: "news", color: "#a1a1f7" },
+];
+
 function CategoryFilter() {
-  return <aside>Category filter</aside>;
+  return (
+    <aside>
+      <ul>
+        <li>
+          <button className="btn-all">All</button>
+        </li>
+        {CATEGORIES.map((cat) => (
+          <li key={cat.name} className="category">
+            <button
+              className="btn-category"
+              style={{ backgroundColor: cat.color }}
+            >
+              {cat.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 function FactList() {
