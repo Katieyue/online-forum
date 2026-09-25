@@ -86,33 +86,40 @@ function FactList() {
     <section>
       <ul className="facts-list">
         {facts.map((fact) => (
-          <li key={fact.id} className="fact">
-            <p>
-              {fact.text}
-              <a className="source" href={fact.source} target="_blank">
-                (Source)
-              </a>
-            </p>
-            <span
-              className="tag"
-              style={{
-                backgroundColor: CATEGORIES.find(
-                  (cat) => cat.name === fact.category,
-                ).color,
-              }}
-            >
-              {fact.category}
-            </span>
-
-            <div className="reaction-buttons">
-              <button>👍 {fact.upvote}</button>
-              <button>🤯 {fact.votes_interesting}</button>
-              <button>⛔️ {fact.votes_false}</button>
-            </div>
-          </li>
+          <Fact key={fact.id} fact={fact} /> // creating fact instances
         ))}
       </ul>
+      <p>There are {facts.length} facts in the database. Add your own!</p>
     </section>
+  );
+}
+
+function Fact({ fact }) {
+  // const { factObj } = props;
+  return (
+    <li className="fact">
+      <p>
+        {fact.text}
+        <a className="source" href={fact.source} target="_blank">
+          (Source)
+        </a>
+      </p>
+      <span
+        className="tag"
+        style={{
+          backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category)
+            .color,
+        }}
+      >
+        {fact.category}
+      </span>
+
+      <div className="reaction-buttons">
+        <button>👍 {fact.upvote}</button>
+        <button>🤯 {fact.votes_interesting}</button>
+        <button>⛔️ {fact.votes_false}</button>
+      </div>
+    </li>
   );
 }
 
