@@ -1,4 +1,5 @@
 import "./style.css";
+import { useState } from "react";
 
 const initialFacts = [
   {
@@ -34,7 +35,20 @@ const initialFacts = [
   },
 ];
 
+function Counter() {
+  const [count, setCount] = useState(0); // destructure
+  return (
+    <div>
+      <span style={{ fontSize: "40px" }}>{count}</span>
+      <button onClick={() => setCount((c) => c + 1)}>+1</button>
+    </div>
+  );
+}
+
 function App() {
+  // 1) define state variable
+  const [showForm, setShowForm] = useState(false);
+
   const appTitle = "Anteater Tidbits";
 
   return (
@@ -49,10 +63,18 @@ function App() {
           />
           <h1>{appTitle}</h1>
         </div>
-        <button className="large-btn btn-post">Share a post</button>
+        <button
+          className="large-btn btn-post"
+          // update state variable
+          onClick={() => setShowForm((show) => !show)}
+        >
+          Share a post
+        </button>
       </header>
 
-      <NewPostForm />
+      {/* 2) use state variable */}
+      {showForm ? <NewPostForm /> : null}
+
       <main>
         <CategoryFilter />
         <FactList />
