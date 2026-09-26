@@ -197,12 +197,13 @@ form {
 form input,
 form select {
   width: 220px;
-  background-color: rgb(111, 73, 73);
+  background-color: rgb(255, 235, 229);
   border: 1px solid #493225;
   border-radius: 100px;
   padding: 16px;
   color: inherit;
   font-family: inherit;
+  font-size: 18px;
 }
 
 form span {
@@ -213,7 +214,7 @@ form span {
 
 form input::placeholder {
   /* pseudoelement */
-  color: white;
+  color: black;
 }
 
 form input:first-child {

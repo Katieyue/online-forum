@@ -46,45 +46,45 @@ function Counter() {
 }
 
 function App() {
-  // 1) define state variable
   const [showForm, setShowForm] = useState(false);
-
-  const appTitle = "Anteater Tidbits";
+  const [facts, setFacts] = useState(initialFacts); // temp
 
   return (
     <>
-      {/* HEADER */}
-      <header>
-        <div className="logo">
-          <img
-            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2013%2F07%2F12%2F18%2F55%2Fthinking-153993_1280.png&f=1&nofb=1&ipt=f2ed3e7ec1949433ed8f00e99377043cd55ac0aca53b822917c42b141a9f5a00"
-            height="68"
-            alt="Text bubble logo"
-          />
-          <h1>{appTitle}</h1>
-        </div>
-        <button
-          className="large-btn btn-post"
-          // update state variable
-          onClick={() => setShowForm((show) => !show)}
-        >
-          Share a post
-        </button>
-      </header>
+      <Header showForm={showForm} setShowForm={setShowForm} />
 
-      {/* 2) use state variable */}
-      {showForm ? <NewPostForm /> : null}
+      {showForm ? (
+        <NewPostForm setFacts={setFacts} setShowForm={setShowForm} />
+      ) : null}
 
       <main>
         <CategoryFilter />
-        <FactList />
+        <FactList facts={facts} />
       </main>
     </>
   );
 }
 
-function NewPostForm() {
-  return <form>Fact form</form>;
+function Header({ showForm, setShowForm }) {
+  const appTitle = "Anteater Tidbits";
+  return (
+    <header>
+      <div className="logo">
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2013%2F07%2F12%2F18%2F55%2Fthinking-153993_1280.png&f=1&nofb=1&ipt=f2ed3e7ec1949433ed8f00e99377043cd55ac0aca53b822917c42b141a9f5a00"
+          height="68"
+          alt="Text bubble logo"
+        />
+        <h1>{appTitle}</h1>
+      </div>
+      <button
+        className="large-btn btn-post"
+        onClick={() => setShowForm((show) => !show)}
+      >
+        {showForm ? "Close" : "Share a post"}
+      </button>
+    </header>
+  );
 }
 
 const CATEGORIES = [
@@ -97,6 +97,94 @@ const CATEGORIES = [
   { name: "history", color: "#ffc79f" },
   { name: "news", color: "#a1a1f7" },
 ];
+
+// const CATEGORIES = [
+//   { name: "Classes", color: "#B5DCFE" },
+//   { name: "Clubs", color: "#BDE3D4" },
+//   { name: "News", color: "#f28c38" },
+//   { name: "Events", color: "#FCE27B" },
+//   { name: "History", color: "#FFB3BE" },
+//   { name: "Food", color: "#8af2e6" },
+//   { name: "Housing", color: "#ffc79f" },
+//   { name: "Opportunities", color: "#a1a1f7" },
+// ];
+
+function isValidUrl(string) {
+  let url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+  return url.protocol === "http:" || url.protocol === "https:";
+}
+
+function NewPostForm({ setFacts, setShowForm }) {
+  const [text, setText] = useState("");
+  const [source, setSource] = useState("http://example.com");
+  const [category, setCategory] = useState("");
+  const textLength = text.length;
+
+  function handleSubmit(e) {
+    // 1. Prevent browser reload on submit
+    e.preventDefault();
+    console.log(text, source, category);
+
+    // 2. Check if data is valid, if so create new fact
+    if (text && isValidUrl(source) && category && textLength <= 200)
+      console.log("there is data");
+
+    // 3. Create new fact object
+    const newFact = {
+      id: Math.round(Math.random() * 10000000),
+      text, // text: text
+      source, // source: source
+      category, // category: category
+      upvote: 0,
+      votes_interesting: 0,
+      votes_false: 0,
+      createdIn: new Date().getFullYear(),
+    };
+
+    // 4. Add new fact to UI, add fact to state
+    setFacts((facts) => [newFact, ...facts]);
+
+    // 5. Reset input fields (back to empty)
+    setText("");
+    setSource("");
+    setCategory("");
+    // 6. Close the form
+    setShowForm(false);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Share a fact..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <span>{200 - text.length}</span>
+      <input
+        value={source}
+        type="text"
+        placeholder="Trustworthy source..."
+        value={source}
+        onChange={(e) => setSource(e.target.value)}
+      />
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="">Choose category:</option>
+        {CATEGORIES.map((cat) => (
+          <option key={cat.name} value={cat.name}>
+            {cat.name.toUpperCase()}
+          </option>
+        ))}
+      </select>
+      <button className="large-btn">Post</button>
+    </form>
+  );
+}
 
 function CategoryFilter() {
   return (
@@ -120,8 +208,7 @@ function CategoryFilter() {
   );
 }
 
-function FactList() {
-  const facts = initialFacts; // temp
+function FactList({ facts }) {
   return (
     <section>
       <ul className="facts-list">
