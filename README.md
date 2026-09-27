@@ -4,7 +4,7 @@ A simple forum-style web application for sharing interesting facts and tidbits. 
 
 This project is currently a work in progress as I learn web development and React.
 
-(forum.png)
+![](forum.png)
 
 ## Features
 
