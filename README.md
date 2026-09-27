@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# University Forum
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple forum-style web application for sharing interesting facts and tidbits. Users can browse existing posts and add their own facts through the website.
 
-## Available Scripts
+This project is currently a work in progress as I learn web development and React.
 
-In the project directory, you can run:
+(forum.png)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Browse interesting facts and tidbits
+- Add new facts through the website
+- Organize posts by category _(in progress)_
+- Interactive front-end built with React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React**
+- **JavaScript**
+- **HTML**
+- **CSS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Current Status
 
-### `npm run build`
+The front end of the application is currently implemented, including the main forum interface and the ability to create and display new facts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I am continuing to learn JavaScript and React while developing the project. Future development will include:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Persisting posts with a database
+- Implementing category filtering and organization
+- Expanding post interactions
+- Improving the overall user experience
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running Locally
 
-### `npm run eject`
+Clone the repository and install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/Katieyue/online-forum.git
+cd online-forum
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application will run locally at `http://localhost:3000`.
 
-## Learn More
+## What I'm Learning
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is part of my process of learning web development through building. Rather than waiting until I had learned every part of the stack, I started building the application and have been learning new concepts as I encounter them.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is still in progress, and I am continuing to build out the functionality as I learn more about JavaScript, React, and web application development.

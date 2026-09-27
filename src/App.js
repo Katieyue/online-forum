@@ -4,34 +4,25 @@ import { useState } from "react";
 const initialFacts = [
   {
     id: 1,
-    text: "React is being developed by Meta (formerly facebook)",
-    source: "https://opensource.fb.com/",
-    category: "technology",
+    text: "UC Irvine places eighth among nation's best public universities",
+    source:
+      "https://news.uci.edu/2026/09/22/uc-irvine-places-eighth-among-nations-best-public-universities/://opensource.fb.com/",
+    category: "News",
     upvote: 24,
     votes_interesting: 9,
     votes_false: 4,
-    createdIn: 2021,
+    createdIn: 2026,
   },
   {
     id: 2,
-    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
+    text: "A new Mesa Court community center has finished construction ahead of academic year",
     source:
-      "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "society",
+      "https://newuniversity.org/2026/09/25/mesa-court-community-center-construction-complete-ahead-of-academic-year/",
+    category: "Housing",
     upvote: 11,
     votes_interesting: 2,
     votes_false: 0,
     createdIn: 2019,
-  },
-  {
-    id: 3,
-    text: "Lisbon is the capital of Portugal",
-    source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "society",
-    upvote: 8,
-    votes_interesting: 3,
-    votes_false: 1,
-    createdIn: 2015,
   },
 ];
 
@@ -66,7 +57,7 @@ function App() {
 }
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "Anteater Tidbits";
+  const appTitle = "University Forum";
   return (
     <header>
       <div className="logo">
@@ -87,27 +78,27 @@ function Header({ showForm, setShowForm }) {
   );
 }
 
-const CATEGORIES = [
-  { name: "technology", color: "#B5DCFE" },
-  { name: "science", color: "#BDE3D4" },
-  { name: "finance", color: "#f28c38" },
-  { name: "society", color: "#FCE27B" },
-  { name: "entertainment", color: "#FFB3BE" },
-  { name: "health", color: "#8af2e6" },
-  { name: "history", color: "#ffc79f" },
-  { name: "news", color: "#a1a1f7" },
-];
-
 // const CATEGORIES = [
-//   { name: "Classes", color: "#B5DCFE" },
-//   { name: "Clubs", color: "#BDE3D4" },
-//   { name: "News", color: "#f28c38" },
-//   { name: "Events", color: "#FCE27B" },
-//   { name: "History", color: "#FFB3BE" },
-//   { name: "Food", color: "#8af2e6" },
-//   { name: "Housing", color: "#ffc79f" },
-//   { name: "Opportunities", color: "#a1a1f7" },
+//   { name: "technology", color: "#B5DCFE" },
+//   { name: "science", color: "#BDE3D4" },
+//   { name: "finance", color: "#f28c38" },
+//   { name: "society", color: "#FCE27B" },
+//   { name: "entertainment", color: "#FFB3BE" },
+//   { name: "health", color: "#8af2e6" },
+//   { name: "history", color: "#ffc79f" },
+//   { name: "news", color: "#a1a1f7" },
 // ];
+
+const CATEGORIES = [
+  { name: "Classes", color: "#B5DCFE" },
+  { name: "Clubs", color: "#BDE3D4" },
+  { name: "News", color: "#f28c38" },
+  { name: "Events", color: "#FCE27B" },
+  { name: "History", color: "#FFB3BE" },
+  { name: "Food", color: "#8af2e6" },
+  { name: "Housing", color: "#ffc79f" },
+  { name: "Opportunities", color: "#a1a1f7" },
+];
 
 function isValidUrl(string) {
   let url;
@@ -216,7 +207,7 @@ function FactList({ facts }) {
           <Fact key={fact.id} fact={fact} /> // creating fact instances
         ))}
       </ul>
-      <p>There are {facts.length} facts in the database. Add your own!</p>
+      <p>There are {facts.length} posts in the database. Add your own!</p>
     </section>
   );
 }
